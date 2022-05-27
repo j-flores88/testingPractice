@@ -1,6 +1,8 @@
 const capitalize = require('../scripts/capitalize');
 
 test('Checks input is string.', () => {
+    expect(capitalize(null)).toBe('Please enter valid string.');
+    expect(capitalize(undefined)).toBe('Please enter valid string.');
     expect(capitalize(123)).toBe('Please enter valid string.');
     expect(capitalize({ 0: 0 })).toBe('Please enter valid string.');
     expect(capitalize([1, 2, 3])).toBe('Please enter valid string.');
