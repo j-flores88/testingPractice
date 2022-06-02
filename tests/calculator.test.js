@@ -25,7 +25,7 @@ test('Accepts floating point numbers.', () => {
     expect(divide(0.4, 0.2)).toBe(2);
 });
 
-test('it calculates two integers.', () => {
+test('It calculates two integers.', () => {
     expect(add(2, 2)).toBe(4);
     expect(subtract(2, 2)).toBe(0);
     expect(multiply(2, 2)).toBe(4);
@@ -41,4 +41,4 @@ test('It calculates negative and positive integers', () => {
 
 test('It returns NaN if second argument is 0', () => {
     expect(divide(4, 0)).toBe(NaN);
-})
+});
