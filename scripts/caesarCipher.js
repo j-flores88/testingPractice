@@ -1,11 +1,21 @@
 function caesarCipher(str, shift) {
     const alpha = 'abcdefghijklmnopqrstuvwxyz'.split('');
-    let newStr = '';
+    let result = '';
 
     if (typeof(str) !== 'string') return 'Please enter a valid string.'
-    if (shift < 0 || !Number(shift)) return 'Please enter a valid number.'
+    if (!Number(shift)) return 'Please enter a valid number.'
 
-    return newStr;
+    let newStr = str.toLowerCase();
+
+    for (let i = 0; i < newStr.length; i++) {
+        let index = alpha.indexOf(newStr[i]);
+        if (index + shift < 0) {
+            result += alpha[(index + shift) + 26];
+        } else {
+            result += alpha[(index + shift) % 26];
+        }
+    }
+    return result;
 };
 
 module.exports = caesarCipher;

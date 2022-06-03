@@ -9,5 +9,17 @@ test('It checks if shift is a number', () => {
 });
 
 test('It returns a string', () => {
-    expect(caesarCipher('string', 2)).toBe('');
+    expect(caesarCipher('', 2)).toBe('');
 });
+
+test('It encrypts a string.', () => {
+    expect(caesarCipher('abc', 1)).toBe('bcd');
+});
+
+test('It decrypts a string (allows negative shift).', () => {
+    expect(caesarCipher('abc', -2)).toBe('yza');
+});
+
+test('It ignores case.', () => {
+    expect(caesarCipher('AbC', 1)).toBe('bcd');
+})
