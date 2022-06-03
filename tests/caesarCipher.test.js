@@ -20,6 +20,10 @@ test('It decrypts a string (allows negative shift).', () => {
     expect(caesarCipher('abc', -2)).toBe('yza');
 });
 
-test('It ignores case.', () => {
-    expect(caesarCipher('AbC', 1)).toBe('bcd');
-})
+test('It keeps the same case.', () => {
+    expect(caesarCipher('AbC', 1)).toBe('BcD');
+});
+
+test('It keeps punctuation.', () => {
+    expect(caesarCipher('Code!', 1)).toBe('Dpef!');
+});
